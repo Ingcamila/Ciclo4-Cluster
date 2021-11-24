@@ -1,10 +1,10 @@
-package com.villavoemprende.apirestcluster.controllers.services;
+package com.villavoemprende.apirestcluster.services;
 
 import java.util.ArrayList;
 import java.util.Optional;
 
-import com.villavoemprende.apirestcluster.controllers.models.ClienteModel;
-import com.villavoemprende.apirestcluster.controllers.repositories.ClienteRepository;
+import com.villavoemprende.apirestcluster.models.ClienteModel;
+import com.villavoemprende.apirestcluster.repositories.ClienteRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
