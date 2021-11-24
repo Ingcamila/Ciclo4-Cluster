@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 import org.springframework.data.annotation.Id;
 
-public class ClienteModel {
+public class EmpresaModel {
 
     @Id
     private Long id;
@@ -24,10 +24,10 @@ public class ClienteModel {
     private String municipio;
     private LocalDate fRegistro;
 
-    public ClienteModel() {
+    public EmpresaModel() {
     }
 
-    public ClienteModel(Long id, String nombreRepresentante, String tipoDoc, String doc, String tipoEmpresa, String nit,
+    public EmpresaModel(Long id, String nombreRepresentante, String tipoDoc, String doc, String tipoEmpresa, String nit,
             String email, String razonSocial, String telefono, String categoria, String target, String sector,
             String direccion, String departamento, String municipio, LocalDate fRegistro) {
         this.id = id;

@@ -15,40 +15,40 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.villavoemprende.apirestcluster.models.ClienteModel;
-import com.villavoemprende.apirestcluster.services.ClienteService;
+import com.villavoemprende.apirestcluster.models.EmpresaModel;
+import com.villavoemprende.apirestcluster.services.EmpresaService;
 
 @RestController 
 @CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST})
-@RequestMapping("/cliente")
-public class ClienteController {
+@RequestMapping("/empresa")
+public class EmpresaController {
 
     @Autowired
-    ClienteService clienteService;
+    EmpresaService empresaService;
         
     @GetMapping()
-    public ArrayList<ClienteModel> obtenerClientes(){
-        return clienteService.obtenerClientes();
+    public ArrayList<EmpresaModel> obtenerEmpresas(){
+        return empresaService.obtenerEmpresas();
     }
 
     @PostMapping()
-    public ClienteModel guardarCliente(@RequestBody ClienteModel cliente){
-        return clienteService.guardarCliente(cliente);
+    public EmpresaModel guardarEmpresa(@RequestBody EmpresaModel empresa){
+        return empresaService.guardarEmpresa(empresa);
     }
 
     @DeleteMapping(path = "/{id}")
-    public String eliminarClientePorId(@PathVariable ("id") Long id ){
-        boolean resultadoEliminar=this.clienteService.eliminarCliente(id);
+    public String eliminarEmpresaPorId(@PathVariable ("id") Long id ){
+        boolean resultadoEliminar=this.empresaService.eliminarEmpresa(id);
         if (resultadoEliminar){
-            return "Se eliminó el usuario con id: "+id;
+            return "Se eliminó la empresa con id: "+id;
         }else{
-            return "No se pudo eliminar el usuario con el id: "+id;
+            return "No se pudo eliminar la empresa con el id: "+id;
         }
     }
     
     @GetMapping(path = "/{id}")
-    public Optional<ClienteModel> obtenerCliOptional(@PathVariable("id") Long id){
-        return this.clienteService.obtenerClientePorId(id);
+    public Optional<EmpresaModel> obtenerEmpresaPorId(@PathVariable("id") Long id){
+        return this.empresaService.obtenerEmpresaPorId(id);
     }
     
 
