@@ -1,6 +1,7 @@
 package com.villavoemprende.apirestcluster.models;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import org.springframework.data.annotation.Id;
 
@@ -16,7 +17,7 @@ public class EmpresaModel {
     private String email;
     private String razonSocial;
     private String telefono;
-    private String categoria;
+    private List<CategoriaModel> categorias;
     private String target;
     private String sector;
     private String direccion;
@@ -28,7 +29,7 @@ public class EmpresaModel {
     }
 
     public EmpresaModel(Long id, String nombreRepresentante, String tipoDoc, String doc, String tipoEmpresa, String nit,
-            String email, String razonSocial, String telefono, String categoria, String target, String sector,
+            String email, String razonSocial, String telefono, List<CategoriaModel> categorias, String target, String sector,
             String direccion, String departamento, String municipio, LocalDate fRegistro) {
         this.id = id;
         this.nombreRepresentante = nombreRepresentante;
@@ -39,7 +40,7 @@ public class EmpresaModel {
         this.email = email;
         this.razonSocial = razonSocial;
         this.telefono = telefono;
-        this.categoria = categoria;
+        this.categorias = categorias;
         this.target = target;
         this.sector = sector;
         this.direccion = direccion;
@@ -120,12 +121,12 @@ public class EmpresaModel {
         this.telefono = telefono;
     }
 
-    public String getCategoria() {
-        return categoria;
+    public List<CategoriaModel> getCategorias() {
+        return categorias;
     }
 
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
+    public void setCategorias(List<CategoriaModel> categorias) {
+        this.categorias = categorias;
     }
 
     public String getTarget() {

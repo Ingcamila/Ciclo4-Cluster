@@ -18,7 +18,7 @@ public class EmpresaService {
         return (ArrayList<EmpresaModel>) empresaRepository.findAll();
     }
 
-    public EmpresaModel guardarEmpresa(EmpresaModel empresa){
+    public EmpresaModel guardarActualizarEmpresa(EmpresaModel empresa){
         return empresaRepository.save(empresa);
 
     }
@@ -36,5 +36,9 @@ public class EmpresaService {
     
     public Optional<EmpresaModel> obtenerEmpresaPorId(Long id){
         return empresaRepository.findById(id);
+    }
+
+    public Optional<EmpresaModel> obtenerPorRazonSocial(String razonSocial){
+        return empresaRepository.findByRazonSocial(razonSocial);
     }
 }
